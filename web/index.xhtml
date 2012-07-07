@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Login Web</title>
+    </h:head>
+    <h:body>
+      <h:form id="formLogin">
+        <h1><h:outputText id="bemVindo" value="Bem vindo(a) ao sistema."/></h1>
+        <h:panelGrid id="gridLoginSenha" columns="2">
+          <h:outputText id="loginText" value="Login:"/>
+          <h:inputText id="login" label="Login do Usuario"
+                       value="#{loginMB.usuario.login}" required="true"/>
+
+          <h:outputText id="senhaText" value="Senha:"/>
+          <h:inputSecret id="senha" label="Senha"
+                         value="#{loginMB.usuario.senha}" required="true"/>
+        </h:panelGrid>
+        <h:messages id="msgErro" style="color: red"/>
+        <h:commandButton id="botao" value="Entrar" action="#{loginMB.doEfetuarLogin}"/>
+      </h:form>
+    </h:body>
+</html>
+
